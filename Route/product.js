@@ -16,4 +16,5 @@ async function run() {
         res.send(products)
     })
 }
+run().catch(console.dir)
 module.exports = router;
