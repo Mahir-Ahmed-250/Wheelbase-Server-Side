@@ -22,10 +22,16 @@ async function run() {
         const orderCollection = database.collection('orders');
         const reviewCollection = database.collection('reviews');
         const userCollection = database.collection('users');
-
+        const testingCollection = database.collection('testing')
         // GET All Products API
         app.get('/products', async (req, res) => {
             const cursor = productCollection.find({})
+            const products = await cursor.toArray()
+            res.send(products)
+        })
+
+        app.get('/testing', async (req, res) => {
+            const cursor = testingCollection.find({})
             const products = await cursor.toArray()
             res.send(products)
         })
