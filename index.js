@@ -19,10 +19,10 @@ async function run() {
 
         const database = client.db('WheelBase')
         const productCollection = database.collection('products')
+        const testingCollection = database.collection('testing')
         const orderCollection = database.collection('orders');
         const reviewCollection = database.collection('reviews');
         const userCollection = database.collection('users');
-        const testingCollection = database.collection('testing')
         // GET All Products API
         app.get('/products', async (req, res) => {
             const cursor = productCollection.find({})
