@@ -30,7 +30,7 @@ async function run() {
             res.send(products)
         })
 
-        app.get('/testing', async (req, res) => {
+        app.get('/naturals', async (req, res) => {
             const cursor = testingCollection.find({})
             const testing = await cursor.toArray()
             res.send(testing)
