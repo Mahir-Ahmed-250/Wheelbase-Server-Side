@@ -31,7 +31,7 @@ async function run() {
         })
 
         app.get('/naturals', async (req, res) => {
-            const result = await testingCollection.find().toArray();
+            const result = await toolCollection.find().toArray();
             res.json(result);
         })
 
