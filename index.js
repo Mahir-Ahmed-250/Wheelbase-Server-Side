@@ -32,8 +32,8 @@ async function run() {
 
         app.get('/testing', async (req, res) => {
             const cursor = testingCollection.find({})
-            const products = await cursor.toArray()
-            res.send(products)
+            const testing = await cursor.toArray()
+            res.send(testing)
         })
 
         // GET Single Product API
