@@ -30,9 +30,10 @@ async function run() {
             res.send(products)
         })
 
-        app.get('/naturals', async (req, res) => {
-            const result = await toolCollection.find().toArray();
-            res.json(result);
+        app.get('/testing', async (req, res) => {
+            const cursor = testingCollection.find({})
+            const testing = await cursor.toArray()
+            res.send(testing)
         })
 
         // GET Single Product API
