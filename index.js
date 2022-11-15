@@ -45,6 +45,14 @@ async function run() {
             res.send(testing)
         })
 
+        // GET Single STUDIO API
+        app.get('/studio/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) }
+            const product = await studioCollection.findOne(query);
+            res.json(product)
+        })
+
 
         // GET Single Product API
         app.get('/products/:id', async (req, res) => {
