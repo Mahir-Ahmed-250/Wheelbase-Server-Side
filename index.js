@@ -19,10 +19,11 @@ async function run() {
 
         const database = client.db('WheelBase')
         const productCollection = database.collection('products')
-        const testingCollection = database.collection('testing')
         const orderCollection = database.collection('orders');
         const reviewCollection = database.collection('reviews');
         const userCollection = database.collection('users');
+        const testingCollection = database.collection('testing')
+        const studioCollection = database.collection('studioTesting')
         // GET All Products API
         app.get('/products', async (req, res) => {
             const cursor = productCollection.find({})
@@ -30,8 +31,16 @@ async function run() {
             res.send(products)
         })
 
+        // NATURALS TESTING
         app.get('/testing', async (req, res) => {
             const cursor = testingCollection.find({})
+            const testing = await cursor.toArray()
+            res.send(testing)
+        })
+
+        // STUDIO TESTING
+        app.get('/studio', async (req, res) => {
+            const cursor = studioCollection.find({})
             const testing = await cursor.toArray()
             res.send(testing)
         })
